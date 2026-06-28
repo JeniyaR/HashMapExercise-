@@ -33,10 +33,24 @@ public class HashMapTest {
     hashMap.put("Сыр", 480);
     hashMap.put("Масло", 190);
 
+    //Добавил позицию
+    hashMap.put("Тыква", 367);
+
+    //модифицировал
+    hashMap.put("Тыква", hashMap.get("Тыква") + 50);
+    hashMap.put("Тыква", hashMap.get("Тыква") - 1);
+
+    //Удалил позицию
+    hashMap.remove("Тыква");
+
+
     for (Entry<String, Integer> entry : hashMap.entrySet()) {
       System.out.println("Товар: " + entry.getKey()
           + ", Сумма продаж: " + entry.getValue());
     }
 
+    // Проверка containsKey
+    boolean hasPumpkin = hashMap.containsKey("Тыква");
+    System.out.println("Содержится ли Тыква? " + hasPumpkin);
   }
 }
