@@ -26,8 +26,6 @@ public class Main {
     printSalesReport();
   }
 
-  }
-
   public static void test(){};
 
   public static void printSalesReport () {
@@ -44,25 +42,23 @@ public class Main {
           + ", Сумма продаж: " + entry.getValue());
     }
 
-
     //Добавил позицию
-    hashMap.put("Тыква", 367);
+    report.put("Тыква", 367);
 
     //модифицировал
-    hashMap.put("Тыква", hashMap.get("Тыква") + 50);
-    hashMap.put("Тыква", hashMap.get("Тыква") - 1);
+    report.put("Тыква", report.get("Тыква") + 50);
+    report.put("Тыква", report.get("Тыква") - 1);
 
     //Удалил позицию
-    hashMap.remove("Тыква");
+    report.remove("Тыква");
 
-
-    for (Entry<String, Integer> entry : hashMap.entrySet()) {
+    for (Entry<String, Integer> entry : report.entrySet()) {
       System.out.println("Товар: " + entry.getKey()
           + ", Сумма продаж: " + entry.getValue());
     }
 
     // Проверка containsKey
-    boolean hasPumpkin = hashMap.containsKey("Тыква");
+    boolean hasPumpkin = report.containsKey("Тыква");
     System.out.println("Содержится ли Тыква? " + hasPumpkin);
   }
 }
