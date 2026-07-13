@@ -1,9 +1,9 @@
-package learn.qa.mytests;
+package mytests;
 
 public class Main {
   public static void main(String[] args) {
 
-    learn.qa.mytests.HashMapTest.printSalesReport();
-
   }
+
+  public static void test(){};
 }
