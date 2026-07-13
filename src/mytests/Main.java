@@ -1,6 +1,7 @@
 package mytests;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 /**
@@ -19,9 +20,11 @@ import java.util.Map.Entry;
  *        - отчет по продажам (переопределить метод toString которвый выведет позицию и числовое значение)<p>
  *        *- опционально добавье возможность хранения удаленных и вовзратов по позициям товаров в отчет toString <p>
  */
-
 public class Main {
-  public static void main(String[] args) {
+
+  static void main(String[] args) {
+    printSalesReport();
+  }
 
   }
 
@@ -29,12 +32,18 @@ public class Main {
 
   public static void printSalesReport () {
 
-    HashMap<String, Integer> hashMap = new HashMap<>();
-    hashMap.put("Хлеб", 150);
-    hashMap.put("Молоко", 320);
-    hashMap.put("Яйца", 210);
-    hashMap.put("Сыр", 480);
-    hashMap.put("Масло", 190);
+    Map<String, Integer> report = new HashMap<>();
+    report.put("Яблоки", 150);
+    report.put("Молоко", 320);
+    report.put("Яйца", 210);
+    report.put("Сыр", 480);
+    report.put("Масло", 190);
+
+    for (Entry<String, Integer> entry : report.entrySet()) {
+      System.out.println("Товар: " + entry.getKey()
+          + ", Сумма продаж: " + entry.getValue());
+    }
+
 
     //Добавил позицию
     hashMap.put("Тыква", 367);
@@ -56,5 +65,4 @@ public class Main {
     boolean hasPumpkin = hashMap.containsKey("Тыква");
     System.out.println("Содержится ли Тыква? " + hasPumpkin);
   }
-
 }
